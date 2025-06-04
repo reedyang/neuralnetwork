@@ -13,7 +13,7 @@ record = 6
 
 # scale input to range 0.01 to 1.00
 all_values = data_list[record].split(',')
-scaled_input = ((numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01).reshape(28, 28)
+scaled_input = ((numpy.asarray(all_values[1:], dtype=float) / 255.0 * 0.99) + 0.01).reshape(28, 28)
 
 print(numpy.min(scaled_input))
 print(numpy.max(scaled_input))

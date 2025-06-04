@@ -11,11 +11,11 @@ data_file.close()
 
 # take the data from a record rearrange it into a 28*28 array and plot it as an image
 all_values = data_list[0].split(',')
-image_array = numpy.asfarray(all_values[1:]).reshape(28, 28)
+image_array = numpy.asarray(all_values[1:], dtype=float).reshape(28, 28)
 plt.imshow(image_array, cmap='Greys', interpolation='None')
 plt.show()
 
-scaled_input = (numpy.asfarray(all_values[1:]) / 255.0 * 0.09) + 0.01
+scaled_input = (numpy.asarray(all_values[1:], dtype=float) / 255.0 * 0.09) + 0.01
 print(scaled_input)
 
 # output nodes is 10(example)
